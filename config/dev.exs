@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :twitter_like, TwitterLike.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "postwitter",
+  password: "born2twit",
   hostname: "localhost",
   database: "twitter_like_dev",
   stacktrace: true,

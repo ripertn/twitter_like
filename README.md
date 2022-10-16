@@ -28,7 +28,11 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
-# twitter_like
 
 
-mix phx.gen.live Timeline Post posts username body likes_count:integer reposts_count:integer
+
+# twitter_like devlog
+
+
+  - mix phx.gen.live Timeline Post posts username body likes_count:integer reposts_count:integer
+  - create user postwitter, pwd born2twit and database postwitter
