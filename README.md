@@ -1,5 +1,16 @@
 # TwitterLike
 
+
+Inspired by video of Chris McCord showing how to efficiently build a twitter like with phoenix
+
+Personnal inputs to the project:
+  - using phoenix 1.6 which means
+    - no need to specify --live since liveview is set by default
+    - esbuild instead of webpack as bundler
+
+
+
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
@@ -18,3 +29,6 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
 # twitter_like
+
+
+mix phx.gen.live Timeline Post posts username body likes_count:integer reposts_count:integer
