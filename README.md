@@ -7,6 +7,7 @@ Personnal inputs to the project:
   - using phoenix 1.6 which means
     - no need to specify --live since liveview is set by default
     - esbuild instead of webpack as bundler
+  - add svg icons on views
 
 
 
@@ -36,3 +37,4 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
   - mix phx.gen.live Timeline Post posts username body likes_count:integer reposts_count:integer
   - create user postwitter, pwd born2twit and database postwitter
+  - create TwitterLikeWeb.Utils.IconUtils module to handle svg, and add several svg to the code

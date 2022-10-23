@@ -95,6 +95,7 @@ defmodule TwitterLikeWeb do
 
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
+      import TwitterLikeWeb.Utils.IconUtils
 
       import TwitterLikeWeb.ErrorHelpers
       import TwitterLikeWeb.Gettext
