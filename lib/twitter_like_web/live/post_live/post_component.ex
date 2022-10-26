@@ -2,8 +2,9 @@ defmodule TwitterLikeWeb.PostLive.PostComponent do
   use TwitterLikeWeb, :live_component
 
   def render(assigns) do
+    a = 
     ~H"""
-    <div id={"post-{@post.id}"} class="post">
+    <div id={"post-#{@post.id}"} class="post">
       <div class="row">
         <div class="column column-10">
           <div class="post-avatar"></div>
@@ -16,12 +17,16 @@ defmodule TwitterLikeWeb.PostLive.PostComponent do
       </div>
       <div class="row">
         <div class="column post-button-column">
-          <%= TwitterLikeWeb.Utils.IconUtils.render("fa-heart.svg", [class: "some_class icon", width: "24", height: "24"]) %>
-          <i class="far fa-heart"></i> <%= @post.likes_count %>
+          <a href="#" phx-click="like" phx-target={"#{@myself}"}>
+            <%= TwitterLikeWeb.Utils.IconUtils.render("fa-heart.svg", [class: "some_class icon", width: "24", height: "24"]) %>
+            <i class="far fa-heart"></i> <%= @post.likes_count %>
+          </a>
         </div>
         <div class="column post-button-column">
-        <%= TwitterLikeWeb.Utils.IconUtils.icon_tag(@socket, "hand-peace", class: "some_class") %>
+        <a href="#" phx-click="repost" phx-target={"#{@myself}"}>
+          <%= TwitterLikeWeb.Utils.IconUtils.icon_tag(@socket, "hand-peace", class: "some_class") %>
           <i class="far fa-hand-peace"></i> <%= @post.reposts_count %>
+        </a>
         </div>
         <div class="column post-button-column">
           <%= live_patch to: Routes.post_index_path(@socket, :edit, @post.id) do %>
@@ -36,5 +41,15 @@ defmodule TwitterLikeWeb.PostLive.PostComponent do
       </div>
     </div>
     """
+  end
+
+  def handle_event("like", _, socket) do
+    TwitterLike.Timeline.inc_likes(socket.assigns.post)
+    {:noreply, socket}
+  end
+
+  def handle_event("repost", _, socket) do
+    TwitterLike.Timeline.inc_reposts(socket.assigns.post)
+    {:noreply, socket}
   end
 end

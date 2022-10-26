@@ -7,6 +7,7 @@ Personnal inputs to the project:
   - using phoenix 1.6 which means
     - no need to specify --live since liveview is set by default
     - esbuild instead of webpack as bundler
+    - Sigil_L is replaced by Sigil_E
   - add svg icons on views
 
 
